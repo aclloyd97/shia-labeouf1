@@ -1,0 +1,62 @@
+
+<<cacheaudio "bgm_shia-instr" "media\audio\shia-labeouf_instr.m4a">>
+<iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album=1907345409/size=small/bgcol=ffffff/linkcol=0687f5/track=3291104678/transparent=true/" seamless><a href="http://robcantormusic.bandcamp.com/album/sheet-music-shia-labeouf-live-full-score">[Sheet Music] &quot;SHIA LABEOUF&quot; LIVE - Full Score by Rob Cantor</a></iframe>
+
+"https://github.com/aclloyd97/shia-labeouf1/blob/master/videoplayback.m4a?raw=true">>
+
+"C:\Users\Andrea\Desktop\Git\Shia\shia-labeouf\shia-labeouf_instr.m4a"
+"https://github.com/aclloyd97/shia-labeouf1/blob/master/videoplayback.m4a?raw=true"
+
+
+
+---------------
+<audio controls>
+ <source src="http://media.w3.org/2010/07/bunny/04-Death_Becomes_Fur.mp4"
+         type='audio/mp4'>
+ <!-- The next two lines are only executed if the browser doesn't support MP4 files -->
+ <source src="http://media.w3.org/2010/07/bunny/04-Death_Becomes_Fur.oga"
+         type='audio/ogg; codecs=vorbis'>
+ <!-- The next line will only be executed if the browser doesn't support the <audio> tag-->
+ <p>Your user agent does not support the HTML5 Audio element.</p>
+</audio>
+--------
+<div style="position:relative;width:267px;height:25px;overflow:hidden;">
+<div style="position:absolute;top:-276px;left:-5px">
+<iframe width="300" height="300"
+  src="https://s0.vocaroo.com/media/download_temp/Vocaroo_s0s4YCFMEfbI.mp3">
+</iframe>
+</div>
+</div>
+
+--------
+
+<audio autoplay>
+<source src="https://s0.vocaroo.com/media/download_temp/Vocaroo_s0s4YCFMEfbI.mp3"; type="audio/mpeg; codecs=mp3" />
+</audio>
+
+--------WORKS-----------
+var audio = new Audio('shia-labeouf_instr.m4a');
+audio.play();
+
+if(typeof YouTubeTunes == "undefined"){
+	$('body').append('<div id="youtubetunes"></div>');
+	var YouTubeTunes = {
+		play: function(id){
+			console.log('YouTubeTunes:' + id);
+			if(this.current != id){
+				this.current = id;
+				var container = $('#youtubetunes');
+				container.empty();
+				container.append('<iframe width="560" height="315" src="https://www.youtube.com/embed/umTX0NQ-aS8?rel=0&autohide=0&#8243" frameborder="0" allowfullscreen></iframe>');
+			} else {
+				console.log('already playing');
+			}
+		},
+		stop: function(){
+			$('#youtubetunes').empty();
+			this.current = "";
+			console.log('stopped youtubetunes');
+		}
+	};
+	window.YouTubeTunes = YouTubeTunes;
+}
